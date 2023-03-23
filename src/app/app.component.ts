@@ -3,7 +3,6 @@ import { MainTodoService, Todo } from './main-todo-service';
 
 import { FormGroup, FormControl } from '@angular/forms';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,6 +12,8 @@ import { FormGroup, FormControl } from '@angular/forms';
 
 
 export class AppComponent {
+
+  constructor(private mainTodoService: MainTodoService) {}
   
   title = 'ProfessionalDirectory';
   todo!: Todo[];
@@ -28,11 +29,19 @@ export class AppComponent {
   //     description: new FormControl(null)
   //   });
   // }
-  itemNum = 0;
-  createTodo() {
-    Item: {
-      TestField: this.itemNum + 1
-    }
+  itemNum = {
+    title: 'string',
+    description: 'string',
+    completed: true
+  };
+  // createTodo() {
+  //   console.log(this.itemNum)
+  //   Item: {
+  //     TestField: this.itemNum + 1
+  //   }
+  // }
+  createButton() {
+    this.mainTodoService.createTodo(this.itemNum)
   }
 
 }
