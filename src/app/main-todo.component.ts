@@ -3,8 +3,9 @@ import { MainTodoService, Todo } from './main-todo-service';
 
 import { FormGroup, FormControl } from '@angular/forms';
 
+
 @Component({
-  selector: 'app-main-todo',
+  selector: 'app-root',
   templateUrl: './main-todo.component.html',
   styleUrls: ['./main-todo.component.css']
 })
